@@ -1,0 +1,23 @@
+﻿.navbar
+{
+	min-height: 57px;
+}
+body
+{
+	background-color: #2F3336 !important;
+	color: #efefef;
+	font-family: "Century Gothic", "Times New Roman";
+	font-size: 17px;
+}
+.page-link{
+	background-color: #2F3336 !important;
+}
+.page-link:hover {
+
+	background-color: #6c757d !important;
+}
+
+.img-fluid{
+
+	height:380px;
+}
