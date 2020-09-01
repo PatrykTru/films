@@ -43,19 +43,19 @@ public class FilmsBootstrap implements ApplicationListener<ContextRefreshedEvent
 
         Optional<Category> actionCategoryOptional = categoryRepository.findByDescription("Action");
         if(!actionCategoryOptional.isPresent())
-            throw new RuntimeException("expected category not found");
+            throw new RuntimeException("expected description not found");
 
         Optional<Category> horrorCategoryOptional = categoryRepository.findByDescription("Horror");
         if(!actionCategoryOptional.isPresent())
-            throw new RuntimeException("expected category not found");
+            throw new RuntimeException("expected description not found");
 
         Optional<Category> comedyCategoryOptional = categoryRepository.findByDescription("Comedy");
         if(!actionCategoryOptional.isPresent())
-            throw new RuntimeException("expected category not found");
+            throw new RuntimeException("expected description not found");
 
         Optional<Category> DocumentalCategoryOptional = categoryRepository.findByDescription("Documental");
         if(!actionCategoryOptional.isPresent())
-            throw new RuntimeException("expected category not found");
+            throw new RuntimeException("expected description not found");
 
 
 
