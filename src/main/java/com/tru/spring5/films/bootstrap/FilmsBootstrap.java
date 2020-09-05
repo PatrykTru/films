@@ -33,6 +33,8 @@ public class FilmsBootstrap implements ApplicationListener<ContextRefreshedEvent
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
+        filmRepository.saveAll(getFilms());
+        log.debug("Loading Bootstrap Data");
     }
 
 
@@ -40,6 +42,7 @@ public class FilmsBootstrap implements ApplicationListener<ContextRefreshedEvent
     {
 
         List<Film> films = new ArrayList<>(2);
+
 
         Optional<Category> actionCategoryOptional = categoryRepository.findByDescription("Action");
         if(!actionCategoryOptional.isPresent())
@@ -87,6 +90,8 @@ public class FilmsBootstrap implements ApplicationListener<ContextRefreshedEvent
         films.add(emillyRoseEgzorcism);
         films.add(avengers);
 
+
+        log.debug("Films created count:" + filmRepository.count());
         return films;
     }
 }
