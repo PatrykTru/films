@@ -20,6 +20,7 @@ public class Film {
     private int yearOfPublishing;
     private Duration movieDuration;
     private String trailerLink;
+    private String posterUrl;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Description description;

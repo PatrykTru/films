@@ -58,7 +58,7 @@
 
             <div class="row float-left">
 
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
@@ -66,14 +66,14 @@
                     </div>
                 </a>
 
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/exorcism.jpg" th:src="@{img/exorcism.jpg}" class="img-fluid poster">
                         <h3 class="h4">Emily Rose Exorcism (2012)</h3>
                     </div>
                 </a>
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
@@ -81,14 +81,14 @@
                     </div>
                 </a>
 
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
                         <h3 class="h4">Avengers (2012)</h3>
                     </div>
                 </a>
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
@@ -96,14 +96,14 @@
                     </div>
                 </a>
 
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/exorcism.jpg" th:src="@{img/exorcism.jpg}" class="img-fluid poster">
                         <h3 class="h4">Emily Rose Exorcism (2012)</h3>
                     </div>
                 </a>
-                <a href="#" class="page-link col-sm-3">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
                     <div class=" text-center mt-4">
 
                         <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
@@ -111,11 +111,18 @@
                     </div>
                 </a>
 
-                <a href="#" class="page-link col-sm-3">
-                    <div class=" text-center mt-4">
+                <a href="#" class="page-link col-sm-3" th:remove="all">
+                <div class=" text-center mt-4">
 
-                        <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
-                        <h3 class="h4">Avengers (2012)</h3>
+                    <img src="../static/img/avengers.jpg" th:src="@{img/avengers.jpg}" class="img-fluid poster">
+                    <h3 class="h4">Avengers (2012)</h3>
+                </div>
+                </a>
+                <a href="#" class="page-link col-sm-3" th:each="film:${films}">
+                       <div class=" text-center mt-4">
+
+                        <img src="../static/img/avengers.jpg" th:src="@{${film.posterUrl}}" class="img-fluid poster">
+                        <h3 class="h4" th:text="${film.title}">Avengers (2012)</h3>
                     </div>
                 </a>
 

@@ -1,6 +1,7 @@
 package com.tru.spring5.films.controllers;
 
 import com.tru.spring5.films.services.FilmService;
+import com.tru.spring5.films.services.NewsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,17 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     private final FilmService filmService;
+    private final NewsService newsService;
 
-    public IndexController(FilmService filmService) {
+    public IndexController(FilmService filmService, NewsService newsService) {
         this.filmService = filmService;
+        this.newsService = newsService;
     }
-
 
     @RequestMapping({"", "/" , "/index"})
     public String getIndexPage(Model model)
     {
      log.debug("Getting index page");
-     model.addAttribute("films" , filmService.getFilms());
+     model.addAttribute("news" , newsService.getNews());
      return "index";
 
     }

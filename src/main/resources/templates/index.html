@@ -69,7 +69,7 @@
 
                 </div>
 
-                <a class="page-link border-0" href="#">
+                <a class="page-link border-0" href="#" th:remove="all">
                 <div class="col-sm-2">
                     <img class="img-fluid float-left mr-3" src="../static/img/evil-news.jpg" th:src="@{img/evil-news.jpg}" alt="Resident Evil" >
                 </div>
@@ -80,7 +80,7 @@
                 </div>
                 </a>
 
-                <a class="page-link border-0" href="#">
+                <a class="page-link border-0" href="#" th:remove="all">
                     <div class="col-sm-2">
                         <img class="img-fluid float-left mr-3" src="../static/img/evil-news.jpg" th:src="@{img/evil-news.jpg}" alt="Resident Evil" >
                     </div>
@@ -91,7 +91,7 @@
                     </div>
                 </a>
 
-                <a class="page-link border-0" href="#">
+                <a class="page-link border-0" href="#" th:remove="all">
                     <div class="col-sm-2">
                         <img class="img-fluid float-left mr-3" src="../static/img/evil-news.jpg" th:src="@{img/evil-news.jpg}" alt="Resident Evil" >
                     </div>
@@ -102,6 +102,16 @@
                     </div>
                 </a>
 
+                <a class="page-link border-0" href="#" th:each="newss:${news}">
+                    <div class="col-sm-2">
+                        <img class="img-fluid float-left mr-3" src="../static/img/evil-news.jpg" th:src="@{${newss.pictureUrl}}" alt="Resident Evil" >
+                    </div>
+                    <div class="col-sm-10" >
+
+                        <p th:text="${newss.newsTextShort}">Resident Evil is coming to the small screen. Netflix has ordered a live-action series based on the popular video game franchise. Andrew Dabb is writing the series. He is behind Supernatural.</p>
+
+                    </div>
+                </a>
 
             </div>
 
