@@ -11,7 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode(exclude = {"films"})
+@EqualsAndHashCode(exclude = {"films" , "series"})
 public class Category {
 
     @Id
@@ -22,4 +22,8 @@ public class Category {
 
     @ManyToMany(mappedBy = "categories")
     private Set<Film> films ;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Series> series;
+
+
 }

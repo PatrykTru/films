@@ -1,6 +1,7 @@
 package com.tru.spring5.films.commands;
 
 import com.tru.spring5.films.POJO.Film;
+import com.tru.spring5.films.POJO.Series;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ public class DescriptionCommand {
     private Long id;
     private Film film;
     private String description;
+    private Series series;
 
     public Long getId() {
         return id;

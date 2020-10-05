@@ -1,36 +1,36 @@
 package com.tru.spring5.films.POJO;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-public class Film {
+public class Series {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
     private String title;
+    private int seasons;
+    private String posterUrl;
     private Double rating;
     private Integer yearOfPublishing;
-    private Duration movieDuration;
-    private String trailerLink;
-    private String posterUrl;
+
 
     @OneToOne(cascade = CascadeType.ALL)
     private Description description;
 
+
     @ManyToMany
-    @JoinTable(name = "film_category",
-            joinColumns = @JoinColumn(name = "film_id"),
+    @JoinTable(name = "series_category",
+            joinColumns = @JoinColumn(name = "series_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
-
 
 
 }

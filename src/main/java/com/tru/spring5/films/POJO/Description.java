@@ -19,6 +19,9 @@ public class Description {
     @OneToOne
     private Film film;
 
+    @OneToOne
+    private Series series;
+
     @Lob
     private String descriptionText;
 }

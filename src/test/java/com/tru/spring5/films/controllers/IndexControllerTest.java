@@ -4,6 +4,7 @@ import com.tru.spring5.films.POJO.Film;
 import com.tru.spring5.films.services.FilmService;
 
 import com.tru.spring5.films.services.NewsService;
+import com.tru.spring5.films.services.SeriesService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -27,6 +28,9 @@ public class IndexControllerTest {
     FilmService filmService;
     @Mock
     NewsService newsService;
+
+    @Mock
+    SeriesService seriesService;
     @Mock
     Model model;
 
@@ -36,7 +40,7 @@ public class IndexControllerTest {
     void setUp() {
 
         MockitoAnnotations.initMocks(this);
-        controller = new IndexController(filmService,newsService);
+        controller = new IndexController(filmService,newsService,seriesService );
 
     }
 
