@@ -40,7 +40,7 @@ public class IndexControllerTest {
     void setUp() {
 
         MockitoAnnotations.initMocks(this);
-        controller = new IndexController(filmService,newsService,seriesService );
+        controller = new IndexController(newsService );
 
     }
 

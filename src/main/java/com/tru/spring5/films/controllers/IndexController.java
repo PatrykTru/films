@@ -12,14 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class IndexController {
 
-    private final FilmService filmService;
     private final NewsService newsService;
-    private final SeriesService seriesService;
 
-    public IndexController(FilmService filmService, NewsService newsService, SeriesService seriesService) {
-        this.filmService = filmService;
+
+    public IndexController( NewsService newsService) {
         this.newsService = newsService;
-        this.seriesService = seriesService;
+
     }
 
     @RequestMapping({"", "/" , "/index"})
@@ -32,23 +30,9 @@ public class IndexController {
     }
 
 
-    @RequestMapping({"/films"})
-    public String getFilmsPage(Model model)
-    {
-        log.debug("Getting films page");
-        model.addAttribute("films" , filmService.getFilms());
-        return "films";
 
-    }
 
-    @RequestMapping({"/series"})
-    public String getSeriesPage(Model model)
-    {
-        log.debug("Getting films page");
-        model.addAttribute("series" , seriesService.getSeries());
-        return "series";
 
-    }
 
 
 }
