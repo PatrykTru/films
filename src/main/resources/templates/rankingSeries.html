@@ -31,7 +31,7 @@
                     <a class="nav-link" th:href="@{/series}" href="series.html">Series</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/ranking}" href="ranking.html">
+                    <a class="nav-link" th:href="@{/rankingFilms}" href="rankingFilms.html">
                         Rankings</a>
                 </li>
 
@@ -45,7 +45,11 @@
             </form>
 
 
+
+
         </div>
+
+
     </nav>
 
 </header>
@@ -60,12 +64,36 @@
 
                 <header>
 
-                    <h1 class="h2 text-center ml-0 mb-4 mt-3 ">Ranking</h1>
+                    <h1 class="h2 text-center ml-0 mb-4 mt-3 mb-5">Ranking</h1>
 
                 </header>
 
-                <div class="col-sm-10 offset-sm-2 bg-dark">
+                <div class="col-sm-12  bg-dark">
+                    <table class="table  table-dark">
+                        <thead>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Rating</th>
 
+                        </thead>
+                        <tbody>
+                        <tr th:remove="all">
+                            <td  scope="row">1</td>
+                            <td  scope="row">Money Heist</td>
+                            <td scope="row">8.1</td>
+                        </tr>
+                        <tr th:remove="all">
+                            <td scope="row">2</td>
+                            <td scope="row">Witcher</td>
+                            <td scope="row">7.5</td>
+                        </tr>
+                        <tr   th:each="serie:${series}">
+                            <td scope="row" th:scope="row" th:text="${serie.getId()}">2</td>
+                            <td scope="row" th:scope="row" th:text="${serie.getTitle()}" >Emily Rose Exorcism</td>
+                            <td scope="row" th:scope="row" th:text="${serie.getRating()}" >7.5</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
 
