@@ -14,7 +14,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
@@ -58,7 +60,7 @@ public class IndexControllerTest {
     void testGetIndexPage()throws Exception{
 
 
-        Set<Film> filmSet = new HashSet<>();
+       List<Film> filmSet = new ArrayList<>();
         filmSet.add(new Film());
 
         Film film = new Film();

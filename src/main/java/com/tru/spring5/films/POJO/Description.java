@@ -12,6 +12,16 @@ import javax.persistence.*;
 @EqualsAndHashCode(exclude = {"film"})
 public class Description {
 
+
+    public Description() {
+
+    }
+
+    public Description(String descriptionText) {
+        this.descriptionText = descriptionText;
+    }
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

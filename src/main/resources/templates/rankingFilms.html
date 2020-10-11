@@ -88,7 +88,7 @@
                             <td scope="row">7.5</td>
                         </tr>
                         <tr   th:each="film:${films}">
-                            <td scope="row" th:scope="row" th:text="${film.getId()}">2</td>
+                            <td scope="row" th:scope="row" th:text="${film.getRank()}">2</td>
                             <td scope="row" th:scope="row" th:text="${film.getTitle()}" >Emily Rose Exorcism</td>
                             <td scope="row" th:scope="row" th:text="${film.getRating()}" >7.5</td>
                         </tr>

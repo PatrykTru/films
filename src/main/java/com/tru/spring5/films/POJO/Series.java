@@ -12,9 +12,22 @@ import java.util.Set;
 @Entity
 public class Series {
 
+    public Series() {
+    }
+
+    public Series(String title, int seasons, String posterUrl, Double rating, Integer yearOfPublishing, Description description) {
+        this.title = title;
+        this.seasons = seasons;
+        this.posterUrl = posterUrl;
+        this.rating = rating;
+        this.yearOfPublishing = yearOfPublishing;
+        this.description = description;
+    }
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int rank;
     private String title;
     private int seasons;
     private String posterUrl;

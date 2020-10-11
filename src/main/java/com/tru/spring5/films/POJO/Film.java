@@ -12,9 +12,32 @@ import java.util.Set;
 @Entity
 public class Film {
 
+    public Film() {
+    }
+
+    public Film(String title, Double rating, Integer yearOfPublishing, Duration movieDuration, String posterUrl, Description description) {
+        this.title = title;
+        this.rating = rating;
+        this.yearOfPublishing = yearOfPublishing;
+        this.movieDuration = movieDuration;
+        this.posterUrl = posterUrl;
+        this.description = description;
+    }
+
+    public Film(String title, Double rating, Integer yearOfPublishing, Duration movieDuration,  String posterUrl, Description description,String trailerLink) {
+        this.title = title;
+        this.rating = rating;
+        this.yearOfPublishing = yearOfPublishing;
+        this.movieDuration = movieDuration;
+        this.trailerLink = trailerLink;
+        this.posterUrl = posterUrl;
+        this.description = description;
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int rank;
     private String title;
     private Double rating;
     private Integer yearOfPublishing;
@@ -30,5 +53,6 @@ public class Film {
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
+
 
 }

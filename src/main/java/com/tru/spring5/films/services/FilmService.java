@@ -3,11 +3,12 @@ package com.tru.spring5.films.services;
 import com.tru.spring5.films.POJO.Film;
 import com.tru.spring5.films.commands.FilmCommand;
 
+import java.util.List;
 import java.util.Set;
 
 public interface FilmService {
 
-    Set<Film> getFilms();
+    List<Film> getFilms();
 
     Film findById(Long l);
 

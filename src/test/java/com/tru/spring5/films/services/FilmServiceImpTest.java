@@ -12,9 +12,7 @@ import org.junit.Test;
 
 import org.mockito.MockitoAnnotations;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 
 import static org.junit.Assert.assertEquals;
@@ -87,12 +85,12 @@ public class FilmServiceImpTest {
     public void getFilmsTest() throws Exception {
 
         Film film = new Film();
-        HashSet filmData = new HashSet();
+        ArrayList filmData = new ArrayList();
         filmData.add(film);
 
         when(filmService.getFilms()).thenReturn(filmData);
 
-        Set<Film> films =filmService.getFilms();
+        List<Film> films =filmService.getFilms();
 
         assertEquals(filmData.size(), 1);
         verify(filmRepository,times(1)).findAll();

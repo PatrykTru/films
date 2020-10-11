@@ -1,5 +1,6 @@
 package com.tru.spring5.films.services;
 
+import com.tru.spring5.films.POJO.Film;
 import com.tru.spring5.films.POJO.Series;
 import com.tru.spring5.films.commands.SeriesCommand;
 import com.tru.spring5.films.converters.SeriesCommandToSeries;
@@ -9,8 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -27,13 +27,17 @@ public class SeriesServiceImpl implements SeriesService{
     }
 
     @Override
-    public Set<Series> getSeries() {
-
+    public List<Series> getSeries() {
+    int i = 0;
         log.debug("method getSeries() in SeriesServiceImpl");
-       Set<Series> seriesSet = new HashSet<>();
-       seriesRepository.findAll().iterator().forEachRemaining(seriesSet::add);
+       List<Series> seriesList = new ArrayList<>();
+       seriesRepository.findAll().iterator().forEachRemaining(seriesList::add);
+        Collections.sort(seriesList,Comparator.comparing(Series::getRating,Comparator.reverseOrder()));
+        for(Series serie : seriesList)
+            serie.setRank(i=i+1);
 
-        return seriesSet;
+        i=0;
+        return seriesList;
     }
 
     @Override

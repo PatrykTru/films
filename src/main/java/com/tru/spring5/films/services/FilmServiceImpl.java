@@ -1,6 +1,7 @@
 package com.tru.spring5.films.services;
 
 import com.tru.spring5.films.POJO.Film;
+import com.tru.spring5.films.POJO.Series;
 import com.tru.spring5.films.commands.FilmCommand;
 import com.tru.spring5.films.converters.FilmCommandToFilm;
 import com.tru.spring5.films.converters.FilmToFilmCommand;
@@ -10,9 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -29,11 +28,18 @@ public class FilmServiceImpl implements FilmService{
     }
 
     @Override
-    public Set<Film> getFilms() {
+    public List<Film> getFilms() {
+        int i=0;
         log.debug("method getFilms() in FilmServiceImpl");
-        Set<Film> filmSet = new HashSet<>();
-        filmRepository.findAll().iterator().forEachRemaining(filmSet::add);
-        return filmSet;
+        List<Film> filmList = new ArrayList<>();
+        filmRepository.findAll().iterator().forEachRemaining(filmList::add);
+        Collections.sort(filmList,Comparator.comparing(Film::getRating,Comparator.reverseOrder()));
+        for(Film films : filmList)
+            films.setRank(i=i+1);
+
+        i=0;
+
+        return filmList;
     }
 
     @Override
