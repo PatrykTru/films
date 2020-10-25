@@ -4,6 +4,8 @@ import com.tru.spring5.films.services.FilmService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -24,4 +26,14 @@ public class FilmsController {
         return "films";
 
     }
+
+    @GetMapping("/film{id}")
+    public String showById(@PathVariable String id,Model model){
+
+        model.addAttribute("film"  , service.findById(new Long(id)));
+
+
+        return "film/filmPattern";
+    }
+
 }

@@ -62,11 +62,19 @@
 
             <div class="row">
 
-                <header>
+                <header class="col-sm-12">
 
                     <h1 class="h2 text-center ml-0 mb-4 mt-3 mb-5">Ranking</h1>
 
                 </header>
+
+                <div class=" col-sm-6">
+                <a th:href="@{/rankingFilms}"><button class="btn-lg btn-dark float-right " >Films</button></a>
+                </div>
+
+                <div class=" col-sm-6">
+                <a th:href="@{/rankingSeries}"><button class="btn-lg btn-dark " >TV Series</button></a>
+                </div>
 
                 <div class="col-sm-12  bg-dark">
                     <table class="table  table-dark">

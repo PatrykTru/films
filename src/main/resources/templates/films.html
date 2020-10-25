@@ -118,7 +118,7 @@
                     <h3 class="h4">Avengers (2012)</h3>
                 </div>
                 </a>
-                <a href="#" class="page-link col-sm-3" th:each="film:${films}">
+                <a href="#" th:href="@{film + ${film.getId()}}" class="page-link col-sm-3" th:each="film:${films}">
                        <div class=" text-center mt-4">
 
                         <img src="../static/img/avengers.jpg" th:src="@{${film.posterUrl}}" class="img-fluid poster">

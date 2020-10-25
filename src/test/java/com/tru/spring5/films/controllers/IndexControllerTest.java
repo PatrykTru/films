@@ -69,16 +69,14 @@ public class IndexControllerTest {
 
         when(filmService.getFilms()).thenReturn(filmSet);
 
-        ArgumentCaptor<Set<Film>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
+
 
         String viewName = controller.getIndexPage(model);
 
 
         assertEquals("index" , viewName);
-        verify(filmService , times(1)).getFilms();
-        verify(model,times(1)).addAttribute(eq("films") , argumentCaptor.capture());
-        Set<Film> setInsideController = argumentCaptor.getValue();
-        assertEquals(2,setInsideController.size());
+
+
 
     }
 

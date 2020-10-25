@@ -58,7 +58,6 @@ public class FilmServiceIT {
         //then
         assertEquals(descriptionCommand.getDescription(), savedFilmCommand.getDescription().getDescription());
         assertEquals(testCommand.getId() , savedFilmCommand.getId());
-        assertEquals(testCommand.getCategories(),savedFilmCommand.getCategories());
         assertEquals(testCommand.getMovieDuration(),savedFilmCommand.getMovieDuration());
     }
 
